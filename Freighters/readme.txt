@@ -1,0 +1,1 @@
+first one here is my actual freighter i found on my own renamed to have the seed :D
