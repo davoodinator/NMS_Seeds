@@ -12,5 +12,6 @@ instructions:
 2. load up the NMS Editor Jar file and leave it on the first tab (https://nomansskymods.com/mods/no-mans-sky-save-editor/)
 3. run the AHK script by loading it and hitting F3.   F2 will reload the script and F1 will end ti
 4.  also you may want to edit the script a bit if your game path isnt F:\SHTEEM\ 
+5. also you may want to have saves in all slots in a safe place like a starbase or freighter this way when it recovers from a crash it will properly resume the screenshotting and cataloging
 
-as always.. this is github PLEASE CONTRIBUTE with your own researched ships... i did mine @ 720p so that the files would be small..  4k screenshots are painful to upload and download.
+as always.. this is github PLEASE CONTRIBUTE with your own researched ships.  4k screenhots are 1.3mb each which is fine imho. i have included the thumbnail renaming in the scripts too

@@ -79,6 +79,8 @@ $f3::
 		SLEEP, 150
 		Send, {c}
 		SLEEP, 150
+		;added 2018-04-28
+		oldboard := % clipboard
 		Send, {LControl Up}
 		SLEEP, 75
 
@@ -178,7 +180,29 @@ $f3::
 			Sleep, 750  ; wait a second and a half for the photot to finish being taken
 			Click, Left, , Up
 			Sleep, 750  ; wait a second and a half for the photo file to finish being written to the hard drive before proceeding. just a precaution.
-		;}
+
+			;added 2018-04-28
+			;now lets work some magic on the file and rename it to the seed value
+			path := "F:\SHTEEM\userdata\62816360\760\remote\275850\screenshots\*.jpg"
+			rootpath := "F:\SHTEEM\userdata\62816360\760\remote\275850\screenshots\"
+			runwait, %comspec% /c dir %path% /S /B /O-D | clip,, hide
+			mostrecentfile := StrSplit(clipboard,"`n","`r")[1]
+			;Msgbox % mostrecentfile
+			;Msgbox % oldboard
+			NooName = %rootpath%%oldboard%.jpg
+			;Msgbox % NooName
+			FileMove %mostrecentfile%, %NooName%
+			;repeat process for thumbnails
+			path := "F:\SHTEEM\userdata\62816360\760\remote\275850\screenshots\thumbnails\*.jpg"
+			rootpath := "F:\SHTEEM\userdata\62816360\760\remote\275850\screenshots\thumbnails\"
+			runwait, %comspec% /c dir %path% /S /B /O-D | clip,, hide
+			mostrecentfile := StrSplit(clipboard,"`n","`r")[1]
+			;Msgbox % mostrecentfile
+			;Msgbox % oldboard
+			NooName = %rootpath%%oldboard%.jpg
+			;Msgbox % NooName
+			FileMove %mostrecentfile%, %NooName%
+			;}
 		
 	;random 500 ms delay so that we can escape from the loop when we need to
 	sleep, 500
